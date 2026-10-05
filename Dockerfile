@@ -30,9 +30,6 @@ WORKDIR /server
 COPY start-server.sh .
 RUN chmod a+x start-server.sh
 
-RUN mkdir /server-files
-RUN chown -R ubuntu:ubuntu /server-files
-
 EXPOSE 7777/udp
 EXPOSE 8888/udp
 
