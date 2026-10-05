@@ -1,6 +1,4 @@
 #!/bin/bash
-cd /server-files
-
 echo "Checking for RuneScape Dragonwilds server updates..."
 
 steamcmd +@sSteamCmdForcePlatformType linux \
