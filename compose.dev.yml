@@ -12,7 +12,7 @@ services:
       - 7777:7777/udp
       - 8888:8888/udp
     volumes:
-      - server-files:/server-files
+      - server-files:/home
       - ./logs:/server-files/RSDragonwilds/Saved/Logs
       - ./saves:/server-files/RSDragonwilds/Saved/SaveGames
 volumes:
