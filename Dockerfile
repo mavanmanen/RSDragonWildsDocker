@@ -30,12 +30,11 @@ WORKDIR /server
 COPY start-server.sh .
 RUN chmod a+x start-server.sh
 
-RUN useradd -m -s /bin/bash steam
 RUN mkdir /server-files
-RUN chown -R steam:steam /server-files
+RUN chown -R ubuntu:ubuntu /server-files
 
 EXPOSE 7777/udp
 EXPOSE 8888/udp
 
-USER steam
+USER ubuntu
 CMD ["/server/start-server.sh"]
