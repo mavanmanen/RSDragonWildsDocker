@@ -6,14 +6,8 @@ echo "Checking for RuneScape Dragonwilds server updates..."
 steamcmd +@sSteamCmdForcePlatformType linux \
          +force_install_dir /server-files \
          +login anonymous \
-         +app_set_config 4019830 validate_on_boot 1 \
          +app_update 4019830 \
-         +quit 2>&1 | awk '
-  /Checking for available updates/ { print "Checking for Steam updates..." }
-  /Update state/                   { print $0 }
-  /Success! App/                   { print $0 }
-  /Error!/                         { print "ERROR: " $0 }
-'
+         +quit
 
 echo "Update check complete."
 
