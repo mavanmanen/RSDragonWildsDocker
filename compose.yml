@@ -1,0 +1,27 @@
+services:
+  server:
+    container_name: server
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 8192M
+        reservations:
+          memory: 8192M
+    ports:
+      - 7777:7777/udp
+      - 8888:8888/udp
+    environment:
+      OWNER_ID: 000255c1c0744e09bc7d8db80f0d0a4d
+      SERVER_NAME: "Vector's Server"
+      WORLD_PASSWORD:
+      DEFAULT_WORLD_NAME: "Vector's World"
+      PLATFORM_POLICY: CrossPlay
+      ALLOW_SENDING_CRASH_DUMPS: False
+    volumes:
+      - server-files:/server-files
+      - ./logs:/server-files/RSDragonwilds/Saved/Logs
+      - ./saves:/server-files/RSDragonwilds/Saved/SaveGames
+volumes:
+  server-files:
+    name: server-files
