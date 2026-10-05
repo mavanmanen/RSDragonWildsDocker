@@ -28,6 +28,7 @@ RUN cp ./initool /usr/local/bin/initool
 RUN mkdir /server
 WORKDIR /server
 COPY start-server.sh .
+RUN chmod a+x start-server.sh
 
 RUN useradd -m -s /bin/bash steam
 RUN mkdir /server-files
